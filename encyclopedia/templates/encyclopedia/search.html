@@ -1,0 +1,15 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for file in files %}
+            <li><a href="{% url 'title' title=file %}">{{ file }}</a></li>
+        {% empty %}
+            <li>No results found</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
